@@ -1,5 +1,5 @@
-CREATE DATABASE `stockcontrol_db` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE `scrapnews_db` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
-CREATE USER 'sc_user'@'localhost' IDENTIFIED BY 'aga342x';
+CREATE USER 'sn_user'@'aws' IDENTIFIED BY '514Montreal';
 
-GRANT ALL PRIVILEGES ON stockcontrol_db. * TO 'sc_user'@'localhost';
+GRANT ALL PRIVILEGES ON scrapnews_db. * TO 'sn_user'@'aws';

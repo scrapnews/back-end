@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.orm.hibernate4.HibernateTransactionManager;
-import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -46,9 +46,9 @@ public class AppConfig {
 		
 		BasicDataSource ds = new BasicDataSource();
 	    ds.setDriverClassName("com.mysql.jdbc.Driver");
-		ds.setUrl("jdbc:mysql://localhost:3306/stockcontrol_db");
-		ds.setUsername("sc_user");
-		ds.setPassword("aga342x");
+		ds.setUrl("jdbc:mysql://aapq21lfjp51ba.cpjoj8sdntqf.us-west-2.rds.amazonaws.com:3306/scrapnews_db");
+		ds.setUsername("scrapnews514");
+		ds.setPassword("514Montreal");
 		return ds;
 	}
 	

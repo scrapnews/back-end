@@ -29,6 +29,8 @@ public class MyUserDetailsService implements UserDetailsService {
 	public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
 	
 		com.scrapnews.model.businessobjects.User user = userDao.findByUserName(username);
+		if (user == null) 
+			return null;
 		List<GrantedAuthority> authorities = buildUserAuthority(user.getUserRole());
 
 		return buildUserForAuthentication(user, authorities);
