@@ -24,6 +24,10 @@ public class MyUserDetailsService implements UserDetailsService {
 	@Autowired
 	private UserDao userDao;
 
+	
+	// default function used by spring security to validate credentials,
+	// specifically check this class UsernamePasswordAuthenticationFilter.attempt...
+	// depending on configuration, we can linked a handler for successfull authentication even for a failure
 	@Transactional(readOnly=true)
 	@Override
 	public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
@@ -38,6 +42,7 @@ public class MyUserDetailsService implements UserDetailsService {
 	}
 
 	// Converts
+	// Why because if we want to have a custom user, we have also to adapt our user to fit user spring security
 	private User buildUserForAuthentication(com.scrapnews.model.businessobjects.User user, List<GrantedAuthority> authorities) {
 		return new User(user.getUsername(), user.getPassword(), user.isEnabled(), true, true, true, authorities);
 	}

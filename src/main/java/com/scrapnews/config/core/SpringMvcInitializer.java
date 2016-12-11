@@ -12,6 +12,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
+//For this project, java-config is used (no xml configuration file)
 public class SpringMvcInitializer implements WebApplicationInitializer  {
 
 	@Override

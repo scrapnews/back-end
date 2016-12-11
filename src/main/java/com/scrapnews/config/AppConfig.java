@@ -12,7 +12,6 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @EnableWebMvc
 @Configuration
@@ -40,7 +39,7 @@ public class AppConfig {
     }
 	
 	
-	// todo adapt for aws
+	// aws cloud database source
 	@Bean(name = "dataSource")
 	public BasicDataSource dataSource() {
 		
@@ -56,13 +55,5 @@ public class AppConfig {
     public HibernateTransactionManager txManager() {
         return new HibernateTransactionManager(sessionFactory());
     }
-		
-	@Bean
-	public InternalResourceViewResolver viewResolver() {
-		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-		viewResolver.setPrefix("/WEB-INF/html/");
-		viewResolver.setSuffix(".html");
-		return viewResolver;
-	}
 	
 }

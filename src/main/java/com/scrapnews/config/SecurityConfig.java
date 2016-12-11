@@ -20,10 +20,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+		// for later, if we want to encrypt password
 		//auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
 		auth.userDetailsService(userDetailsService);
 	}
 
+	// TODO adapt with front end
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 //		http.authorizeRequests().antMatchers("**").permitAll();
@@ -41,26 +43,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 					.defaultSuccessUrl("/success")
 					.loginPage("/login.html")
 					.loginProcessingUrl("/authenticate")
-//					.usernameParameter("username")
-//					.passwordParameter("password")
 					.successHandler(new SavedRequestAwareAuthenticationSuccessHandler())
 				.and()
 				.logout()
 					.logoutUrl("/logout")
 					.logoutSuccessUrl("/login.html")
-					.and().csrf().disable();//csrfTokenRepository(csrfTokenRepository()).and().addFilterAfter(new CsrfHeaderFilter(), CsrfFilter.class);
+					.and().csrf().disable();
 	}
-	
-//	@Bean
-//	public PasswordEncoder passwordEncoder(){
-//		PasswordEncoder encoder = new BCryptPasswordEncoder();
-//		return encoder;
-//	}
-	
-//	private CsrfTokenRepository csrfTokenRepository() {
-//	  HttpSessionCsrfTokenRepository repository = new HttpSessionCsrfTokenRepository();
-//	  repository.setHeaderName("X-XSRF-TOKEN");
-//	  return repository;
-//	}
+
 	
 }
