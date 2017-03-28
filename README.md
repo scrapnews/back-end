@@ -1,5 +1,7 @@
 Project based on https://github.com/savicprvoslav/Spring-Boot-starter (using a lot of spring boot third parties (jpa, web, devtools,...)
 
+
+
 Lightened for useless tech in our case.
 
 Details below :
@@ -46,3 +48,8 @@ call this /api/open/firebase/signup
 Call this with header jwt token, it will created in database a security profile linked to google account with user privilege (maybe later we'll need an entry for admin and guest)
 for example to get a list of all news 
 curl -X GET -H "Accept: application/json" -H "X-Authorization-Firebase-ScrapNews: eyJhbGciOiJSUzI1NiIsImtpZCI6IjlmMDJlOTY1NzI5ODRiNGIyMzI0YWU1NmRiYzQ1YmE0NmIzYmFlMzAifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vc2NyYXBuZXdzLWJhNjNkIiwibmFtZSI6Ik5nb2MgQW4gTmd1eWVuIiwicGljdHVyZSI6Imh0dHBzOi8vbGg1Lmdvb2dsZXVzZXJjb250ZW50LmNvbS8tQXBqUVBNYThkX0EvQUFBQUFBQUFBQUkvQUFBQUFBQUFBR3cvMHJPLTFmZmNvbWsvcGhvdG8uanBnIiwiYXVkIjoic2NyYXBuZXdzLWJhNjNkIiwiYXV0aF90aW1lIjoxNDkwNjY1MzQ1LCJ1c2VyX2lkIjoid1ZKT2JneVI1Zk1OODBGVlh3eXV6dm1oUVB0MiIsInN1YiI6IndWSk9iZ3lSNWZNTjgwRlZYd3l1enZtaFFQdDIiLCJpYXQiOjE0OTA2NjUzNDUsImV4cCI6MTQ5MDY2ODk0NSwiZW1haWwiOiJuZ29jMDJAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZ29vZ2xlLmNvbSI6WyIxMTcyNjg3NjcwMTc3MTQ2NzI3OTEiXSwiZW1haWwiOlsibmdvYzAyQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6Imdvb2dsZS5jb20ifX0.fkrnRXOpiXBu-5GssbPK-l7zITUR45fnOdk15TEndYE84DNRxwxDBKQUthZoW37TKVmyGxUUmml0pIFwmrU_vjkxFNKXylR70KnAC2O81-f900lNw7Z7B-YS5jkE-RbSgLNYukGjwF1-y3MzwmH6S6_zEMP6d1MH5H6t-78cdIf6ndAi7r_o0JO-Nj4mZqjCD8GUzrooedtsSPsWJn-va8jXwnhH6op50IXiWnFoND3b2nAfgyPC2HiFlt5VbVwZmlSDCe6BdHm-zqfslG8MBuUbmwUKzCRpYLiaR_77ppDOynKg4l3utR6qsZXirN3GfOvRqOaJ5VtukU6_9j2BMg" "http://localhost:8080/api/client/newsAll"
+
+
+to start server : 
+
+juste launch main class, it will also start application server embedded etc
